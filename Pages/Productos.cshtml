@@ -1,0 +1,57 @@
+﻿@page
+@model pruebaMediaMarkt.Pages.ProdcutosModel
+
+@{ViewData["Title"] = "Productos";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@*<div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead class="bg-aqua-gradient">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClaveSociedad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomSociedad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion_Poblacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TipoMoneda)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClaveSociedad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomSociedad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion_Poblacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoMoneda)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-edit bg-orange-active" }) |
+                        @Html.ActionLink(" ", "Details", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-zoom-in bg-green" }) |
+                        @Html.ActionLink(" ", "Delete", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-remove-sign bg-red-active" })
+                    </td>
+                </tr>
+            </tbody>
+
+            }
+
+        </table>
+    </div>*@

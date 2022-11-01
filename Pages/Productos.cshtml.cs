@@ -1,8 +1,29 @@
-Ôªønamespace pruebaMediaMarkt.Modelo
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+
+namespace pruebaMediaMarkt.Pages
 {
+    public class ProdcutosModel : PageModel
+    {
+        public List<Producto> listaProductos = new List<Producto>();
+        public void OnGet()
+        {
+            try
+            {
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+    }
+
     public class Producto
     {
-        //Declaraci√≥n de las propiedades de la clase Producto
+        //DeclaraciÛn de las propiedades de la clase Producto
         private string nombre;
         private string descripcion;
         private double precio;
@@ -14,7 +35,7 @@
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.precio = precio;
-            this.familia = familia; //Smartphones, TV, Port√°tiles...
+            this.familia = familia; //Smartphones, TV, Port·tiles...
         }
 
         //Definiciones de las preopiedades - gets and sets

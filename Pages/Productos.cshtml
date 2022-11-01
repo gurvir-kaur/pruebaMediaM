@@ -8,7 +8,7 @@
 
 <h2>Lista de productos</h2>
 <div class="box-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="datatableProductos" class="table table-bordered table-striped">
             <thead class="bg-aqua-gradient">
                 <tr>
                     <th>Nombre</th>
@@ -17,20 +17,16 @@
                     <th>Familia</th>
                 </tr>
             </thead>
-
-
+            <tbody>
             @foreach (var item in Model.listaProductos)
             {
-            <tbody>
                 <tr>
                     <td>@item.Nombre</td>
                     <td>@item.Descripcion</td>
                     <td>@item.Precio</td>
                     <td>@item.Familia</td>
                 </tr>
-            </tbody>
-
             }
-
+            </tbody>
         </table>
     </div>

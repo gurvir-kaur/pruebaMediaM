@@ -4,54 +4,33 @@
 @{ViewData["Title"] = "Productos";
 }
 <h1>@ViewData["Title"]</h1>
+<br />
 
-<p>Use this page to detail your site's privacy policy.</p>
-@*<div class="box-body">
+<h2>Lista de productos</h2>
+<div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead class="bg-aqua-gradient">
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ClaveSociedad)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NomSociedad)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Direccion_Poblacion)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TipoMoneda)
-                    </th>
-                    <th></th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Familia</th>
                 </tr>
             </thead>
 
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.listaProductos)
             {
             <tbody>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ClaveSociedad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NomSociedad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Direccion_Poblacion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TipoMoneda)
-                    </td>
-                    <td>
-                        @Html.ActionLink(" ", "Edit", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-edit bg-orange-active" }) |
-                        @Html.ActionLink(" ", "Details", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-zoom-in bg-green" }) |
-                        @Html.ActionLink(" ", "Delete", new { id = item.IdSociedad }, new { @class = "btn btn-xs glyphicon glyphicon-remove-sign bg-red-active" })
-                    </td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Descripcion</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Familia</td>
                 </tr>
             </tbody>
 
             }
 
         </table>
-    </div>*@
+    </div>

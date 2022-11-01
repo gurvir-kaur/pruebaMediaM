@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace pruebaMediaMarkt.Pages
 {
@@ -11,11 +12,33 @@ namespace pruebaMediaMarkt.Pages
         {
             try
             {
+                string connectionString = "Server = gurvirkaur; Database = pruebaMediaMarkt; Trusted_Connection = True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "Select * from productos";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader() )
+                        {
+                            while (reader.Read())
+                            {
+                                Producto producto = new Producto();
+                                producto.Nombre = reader.GetString(1);
+                                producto.Descripcion = reader.GetString(2);
+                                producto.Precio = Convert.ToDouble(reader.GetDecimal(3));
+                                producto.Familia = reader.GetString(4);
 
+                                //añadir producto en la lista de productos
+                                listaProductos.Add(producto);
+                            }
+                        }
+                    }
+                }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
         }
@@ -30,6 +53,11 @@ namespace pruebaMediaMarkt.Pages
         private string familia;
 
         // Constructor de la clase
+        public Producto()
+        {
+            //empty constructor
+        }
+
         public Producto(string nombre, string descripcion, double precio, string familia)
         {
             this.nombre = nombre;

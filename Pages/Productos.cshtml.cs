@@ -8,6 +8,8 @@ namespace pruebaMediaMarkt.Pages
     public class ProdcutosModel : PageModel
     {
         public List<Producto> listaProductos = new List<Producto>();
+
+        //GET METHOD
         public void OnGet()
         {
             try

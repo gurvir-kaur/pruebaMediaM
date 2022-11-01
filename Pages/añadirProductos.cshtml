@@ -1,0 +1,43 @@
+﻿@page
+@model pruebaMediaMarkt.Pages.añadirProdcutosModel
+@{
+    ViewData["Title"] = "Añadir Produtos";
+}
+<br />
+<h2>Añadir nuevo producto</h2>
+<br />
+
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtName">Nombre:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtName" required name="nombre" value="@Model.productInfo.Nombre"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtDescripcion">Descripción:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtDescripcion" required name="descripcion" value="@Model.productInfo.Descripcion" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtPrecio">Precio:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtPrecio" required name="precio" value="@Model.productInfo.Precio" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtFamilia">Familia:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtFamilia" required name="familia" value="@Model.productInfo.Familia" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+
+</form>

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Añadir Produtos";
 }
 <br />
-<h2>Añadir nuevo producto</h2>
+<h2>Añadir un nuevo producto</h2>
 <br />
 
 @if(Model.message.Length > 0){
@@ -41,6 +41,11 @@
             <input type="text" class="form-control" id="txtFamilia"  name="familia" value="@Model.productInfo.Familia" />
         </div>
     </div>
+    <td class="text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-sm view" id="this.id" onclick="Details(this.id)"><i class="fas fa-eye"></i> <span key="t-view" class="viewtext">Detalles</span></a>
+        </div>
+    </td>
 
     <div class="row mb-3">
         <div class="offset-sm-3 col-sm-3 d-grid">

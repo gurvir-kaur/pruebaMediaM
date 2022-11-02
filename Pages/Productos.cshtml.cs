@@ -68,7 +68,7 @@ namespace pruebaMediaMarkt.Pages
             this.familia = familia; //Smartphones, TV, Portátiles...
         }
 
-        //Definiciones de las preopiedades - gets and sets
+        //Definiciones de las propiedades - gets and sets
         public string Nombre
         {
             get { return this.nombre; }

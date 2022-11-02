@@ -66,6 +66,7 @@ namespace pruebaMediaMarkt.Pages
             int id = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                //update id
                 using (SqlCommand cmd = new SqlCommand("SELECT MAX(id) FROM productos", con))
                 {
                     con.Open();

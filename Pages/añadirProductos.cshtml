@@ -1,0 +1,56 @@
+﻿@page
+@model pruebaMediaMarkt.Pages.añadirProductosModel
+@{
+    ViewData["Title"] = "Añadir Produtos";
+}
+<br />
+<h2>Añadir un nuevo producto</h2>
+<br />
+
+@if(Model.message.Length > 0){
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.message</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtName">Nombre:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtName"  name="nombre" value="@Model.productInfo.Nombre"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtDescripcion">Descripción:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtDescripcion"  name="descripcion" value="@Model.productInfo.Descripcion" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtPrecio">Precio:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtPrecio"  name="precio" value="@Model.productInfo.Precio" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label" for="txtFamilia">Familia:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="txtFamilia"  name="familia" value="@Model.productInfo.Familia" />
+        </div>
+    </div>
+    <td class="text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-sm view" id="this.id" onclick="Details(this.id)"><i class="fas fa-eye"></i> <span key="t-view" class="viewtext">Detalles</span></a>
+        </div>
+    </td>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+
+</form>

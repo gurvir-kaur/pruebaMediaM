@@ -1,0 +1,31 @@
+﻿@page
+@model pruebaMediaMarkt.Pages.ProdcutosModel
+
+@{ViewData["Title"] = "Productos";
+}
+<h1>@ViewData["Title"]</h1>
+<br />
+
+<div class="box-body">
+        <table id="datatableProductos" class="table table-bordered table-striped">
+            <thead class="bg-aqua-gradient">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Familia</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.listaProductos)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Descripcion</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Familia</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
